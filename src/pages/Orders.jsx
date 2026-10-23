@@ -1,22 +1,22 @@
-
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import OrderMenu from "../Components/OrderMenu";
 
 function Orders() {
   return (
-    <div>
-      <h2>E-commerce Order Management</h2>
+    <div className="p-6">
+      <h2 className="text-3xl font-bold text-gray-800 mb-2">
+        📦 Order Management
+      </h2>
 
-      <nav>
-        <Link to="current">Current Orders</Link>
-        {" | "}
-        <Link to="history">Order History</Link>
-        {" | "}
-        <Link to="cancelled">Cancelled Orders</Link>
-      </nav>
+      <p className="text-gray-500 mb-6">
+        Manage and track all your orders in one place.
+      </p>
 
-      <hr />
+      <OrderMenu />
 
-      <Outlet />
+      <div className="bg-white rounded-2xl shadow-lg p-6 mt-6">
+        <Outlet />
+      </div>
     </div>
   );
 }
